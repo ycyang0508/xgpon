@@ -257,7 +257,7 @@ main (int argc, char *argv[])
   PointToPointHelper pointToPoint;
 
   //set the maximum no of packets in p2p tx queue
-  Config::SetDefault ("ns3::DropTailQueue::MaxPackets", UintegerValue (dtqSize));
+  Config::SetDefault ("ns3::DropTailQueue<Packet>::MaxSize", StringValue (std::to_string (dtqSize) + "p") );
   pointToPoint.SetChannelAttribute ("Delay", StringValue (p2pDelay));
   
   pointToPoint.SetDeviceAttribute ("DataRate", StringValue(lastmilePerNodeP2PDataRateString.str()));
