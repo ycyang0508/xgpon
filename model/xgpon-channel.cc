@@ -36,7 +36,7 @@ XgponChannel::GetTypeId (void)
 {
   static TypeId tid = TypeId ("ns3::XgponChannel")
     .SetParent<PonChannel> ()
-    /*.AddConstructor<XgponChannel> ()*/
+    .AddConstructor<XgponChannel> ()
     .AddAttribute ("LogicOneWayPropDelay", 
                    "The logical one way delay agreed by the whole network (OLT and all ONUs). Its unit is nanosecond and should be the sum of maximal propagation delay, processing delay, etc.",
                    UintegerValue (XgponChannel::DEFAULT_LOGIC_ONE_WAY_DELAY),
