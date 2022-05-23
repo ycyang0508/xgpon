@@ -84,7 +84,7 @@ public:
   /**
    * \brief Get the total number of ONUs attached to this channel
    */
-  virtual uint16_t GetNOnuDevices ( ) const = 0;
+  virtual std::size_t GetNOnuDevices ( ) const = 0;
 
   /**
    * \brief Get Onu device based on index. Note that OLT should not be considered in this index.
@@ -128,7 +128,7 @@ public:
   /**
    * \brief Get one network device based on index. Here, 0: olt, i: m_onuDevices[i-1].
    */
-  virtual Ptr<NetDevice> GetDevice (uint32_t i) const;
+  virtual Ptr<NetDevice> GetDevice (std::size_t i) const;
 
 
 
@@ -168,7 +168,7 @@ PonChannel::GetNDevices (void) const
   return GetNOnuDevices()+1;
 }
 inline Ptr<NetDevice>
-PonChannel::GetDevice (uint32_t i) const
+PonChannel::GetDevice (std::size_t i) const
 {
   if(i==0) { return m_oltDevice; }
   else { return GetOnuByIndex(i-1); }

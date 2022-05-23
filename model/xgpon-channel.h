@@ -66,7 +66,7 @@ public:
   /**
    * \brief Get the total number of ONUs attached to this channel
    */
-  virtual uint16_t GetNOnuDevices ( ) const;
+  virtual std::size_t GetNOnuDevices ( ) const;
 
   /**
    * \brief Get Onu device based on index. Note that OLT should not be considered in this index.
@@ -147,7 +147,7 @@ XgponChannel::GetOnuByIndex (uint32_t index) const
   return m_onuDevices[index];
 }
 
-inline uint16_t 
+inline std::size_t 
 XgponChannel::GetNOnuDevices ( ) const
 {
   return m_onuDevices.size ();

@@ -74,7 +74,7 @@ PonChannel::SendDownstream (const Ptr<PonFrame>& frame)
 {
   NS_LOG_INFO ("Schedule to Send One Downstream Frame to all ONUs");
 
-  for (int i = 0; i < GetNOnuDevices(); i++)
+  for (int i = 0; i < int(GetNOnuDevices()); i++)
   {
     uint32_t delay = GetOnuPropagationDelay(i);
 
